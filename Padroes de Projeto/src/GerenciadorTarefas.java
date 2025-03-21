@@ -5,15 +5,15 @@ class GerenciadorTarefas {
 
     public void adicionarTarefa(String descricao) {
         listaTarefas.add(new Tarefa(descricao));
-        System.out.println("Tarefa adicionada com sucesso!");
+        System.out.println("Tarefa registrada com sucesso!");
     }
 
     public void removerTarefa(int indice) {
         try {
             listaTarefas.remove(indice);
-            System.out.println("Tarefa removida com sucesso!");
+            System.out.println("Tarefa excluida com sucesso!");
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Erro: Índice inválido!");
+            System.out.println("Erro: Tarefa inexistente!");
         }
     }
 
@@ -22,15 +22,15 @@ class GerenciadorTarefas {
             listaTarefas.get(indice).marcarConcluida();
             System.out.println("Tarefa marcada como concluída!");
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Erro: Índice inválido!");
+            System.out.println("Erro: Tarefa inexistente!");
         }
     }
 
     public void listarTarefas() {
         if (listaTarefas.isEmpty()) {
-            System.out.println("Nenhuma tarefa na lista.");
+            System.out.println("Lista de tarefas vazia!.");
         } else {
-            System.out.println("\nLista de Tarefas:");
+            System.out.println("\nLista de tarefas registradas:");
             for (int i = 0; i < listaTarefas.size(); i++) {
                 System.out.println(i + " - " + listaTarefas.get(i));
             }
